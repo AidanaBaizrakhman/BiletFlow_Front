@@ -1,0 +1,120 @@
+/* ==========================================================================
+   BiletFlow design tokens — "vintage paper ticket & neo-brutalist ledger"
+   Fonts are loaded in index.html (Inter + JetBrains Mono via Google Fonts).
+   ========================================================================== */
+:root {
+  /* Surfaces */
+  --bf-canvas: #e7dec8;
+  --bf-paper: #f9f5eb;
+  --bf-paper-2: #f1ead9;
+
+  /* Ink */
+  --bf-ink: #182449;
+  --bf-ink-75: rgba(24, 36, 73, 0.75);
+  --bf-ink-12: rgba(24, 36, 73, 0.12);
+  --bf-muted: #4a5568;
+  --bf-disabled: #8d939e;
+  --bf-white: #ffffff;
+
+  /* Semantic */
+  --bf-success: #1e8e4e;
+  --bf-danger: #c03221;
+  --bf-rust: #9c4a1a;
+  --bf-amber: #ef8319;
+  --bf-charcoal: #333333;
+  --bf-refund: #555555;
+
+  /* Type */
+  --bf-sans: 'Inter', 'Golos Text', 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --bf-mono: 'JetBrains Mono', 'IBM Plex Mono', 'Fira Code', ui-monospace, Consolas, monospace;
+
+  /* Shape */
+  --bf-r-sm: 4px;
+  --bf-r: 6px;
+  --bf-r-lg: 8px;
+  --bf-bw: 1.5px;
+  --bf-border: var(--bf-bw) solid var(--bf-ink);
+  --bf-dash: 1px dashed var(--bf-ink-75);
+
+  /* Focus */
+  --bf-focus: 0 0 0 3px var(--bf-canvas), 0 0 0 5px var(--bf-ink);
+
+  color-scheme: light;
+  font: 16px/1.5 var(--bf-sans);
+  color: var(--bf-ink);
+  background: var(--bf-canvas);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bf-canvas);
+  color: var(--bf-ink);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--bf-sans);
+  color: var(--bf-ink);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0;
+}
+h1 { font-size: clamp(28px, 4vw, 44px); }
+h2 { font-size: 26px; }
+h3 { font-size: 19px; }
+h4 { font-size: 15px; }
+
+p { margin: 0; }
+
+a { color: var(--bf-ink); }
+
+code,
+kbd,
+.mono {
+  font-family: var(--bf-mono);
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--bf-focus);
+  border-radius: var(--bf-r-sm);
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
